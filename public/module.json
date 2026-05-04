@@ -1,0 +1,18 @@
+{
+  "id": "shards-core",
+  "title": "SHARDS Core",
+  "description": "Core UI framework for SHARDS modules. Provides the dock, window management, and shared UI primitives consumed by all other SHARDS modules.",
+  "authors": [{ "name": "Shua", "email": "dev.shuapi@gmail.com" }],
+  "version": "1.0.0",
+  "compatibility": { "minimum": "13", "verified": "13" },
+  "esmodules": ["module.js"],
+  "styles": ["styles/module.css", "styles/components.css"],
+  "languages": [
+    { "lang": "en", "name": "English", "path": "languages/en.json" },
+    { "lang": "fr", "name": "Français", "path": "languages/fr.json" }
+  ],
+  "socket": true,
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

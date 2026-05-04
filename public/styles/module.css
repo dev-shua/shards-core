@@ -1,0 +1,228 @@
+#shards-core-root {
+  position: fixed;
+  inset: 0;
+  z-index: 80000;
+  pointer-events: none;
+}
+
+/* Rail */
+#shards-core-rail {
+  position: absolute;
+  left: 0;
+  top: 104px;
+  pointer-events: auto;
+  display: grid;
+  gap: 6px;
+  width: 36px;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.dock-drag {
+  width: 36px;
+  height: 12px;
+  line-height: 12px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ccc;
+  cursor: grab;
+  user-select: none;
+}
+
+.dock-drag:active {
+  cursor: grabbing;
+}
+
+#shards-core-rail .dock-tool {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(30, 30, 30, 0.9);
+  color: #ddd;
+  cursor: pointer;
+  transition: background 120ms;
+}
+
+#shards-core-rail .dock-tool:hover {
+  background: rgba(50, 50, 50, 0.9);
+}
+
+#shards-core-rail .dock-tool.is-active {
+  outline: 2px solid rgba(120, 150, 255, 0.8);
+}
+
+/* Panel */
+#shards-core-panel {
+  position: absolute;
+  left: 48px;
+  top: 104px;
+  pointer-events: auto;
+  width: 380px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(20, 20, 20, 0.98);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(-12px);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    visibility 0.18s;
+}
+
+#shards-core-panel.is-open {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+#shards-core-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+#shards-core-fade.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sc-module-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto !important;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background 120ms;
+  gap: 10px;
+}
+
+.sc-module-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.sc-module-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sc-module-item-left > i {
+  font-size: 15px;
+  color: var(--sc-text-muted);
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sc-module-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sc-module-item-label {
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--sc-text);
+}
+
+.sc-module-item-subtitle {
+  font-size: 0.75em;
+  color: var(--sc-text-muted);
+}
+
+.sc-module-item-chevron {
+  font-size: 11px;
+  color: var(--sc-text-muted);
+  flex-shrink: 0;
+}
+
+.sc-dice-request {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.sc-dice-roll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--color-border-highlight, #f0b429) 40%, transparent);
+  background: color-mix(in srgb, var(--color-border-highlight, #f0b429) 10%, transparent);
+  color: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88em;
+  width: 100%;
+  transition: background 120ms;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.sc-dice-roll-btn:hover:not([disabled]) {
+  background: color-mix(in srgb, var(--color-border-highlight, #f0b429) 20%, transparent);
+}
+
+.sc-dice-roll-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sc-skill-choices {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.sc-dice-skill-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--color-border-highlight, #f0b429) 40%, transparent);
+  background: color-mix(in srgb, var(--color-border-highlight, #f0b429) 10%, transparent);
+  color: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85em;
+  transition: background 120ms;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.sc-dice-skill-btn:hover:not([disabled]) {
+  background: color-mix(in srgb, var(--color-border-highlight, #f0b429) 20%, transparent);
+}
+
+.sc-dice-skill-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

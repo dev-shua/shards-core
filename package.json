@@ -1,0 +1,30 @@
+{
+  "name": "shards-core",
+  "description": "Core UI framework for SHARDS modules",
+  "license": "MIT",
+  "author": "Shua",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "pnpm build && node scripts/deploy.mjs",
+    "release": "node scripts/release.mjs",
+    "release:minor": "node scripts/release.mjs minor",
+    "release:major": "node scripts/release.mjs major"
+  },
+  "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "13.346.0-beta.20250812191140",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^24.12.0",
+    "prettier": "^3.8.2",
+    "prettier-plugin-svelte": "^3.5.1",
+    "svelte": "^5.53.12",
+    "svelte-check": "^4.4.5",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1"
+  }
+}
