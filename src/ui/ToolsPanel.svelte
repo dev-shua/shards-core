@@ -1,10 +1,14 @@
 <script lang="ts">
   import { isFadeActive, toggleFade } from "@features/fade";
   import { getSetting, setSetting, SETTINGS_KEYS } from "@core/settings";
+  import { mount } from "svelte";
+  import DistanceConfig from "@ui/DistanceConfig.svelte";
+  import { openWindow } from "@core/windows/WindowManager";
   import { onMount } from "svelte";
 
   let fadeActive = isFadeActive();
   let fadeDuration = getSetting<number>(SETTINGS_KEYS.FADE_DURATION);
+  let distanceActive = getSetting<boolean>(SETTINGS_KEYS.DISTANCE_MESURER_ENABLED);
 
   async function handleFadeToggle() {
     await toggleFade();
@@ -14,6 +18,24 @@
   async function handleDurationChange(e: Event) {
     fadeDuration = Number((e.target as HTMLInputElement).value);
     await setSetting(SETTINGS_KEYS.FADE_DURATION, fadeDuration);
+  }
+
+  async function handleDistanceToggle() {
+    distanceActive = !distanceActive;
+    await setSetting(SETTINGS_KEYS.DISTANCE_MESURER_ENABLED, distanceActive);
+  }
+
+  function openDistanceConfig() {
+    openWindow({
+      id: "distance-config",
+      title: game.i18n.localize("SC.DistanceMeasurer.Title"),
+      icon: "fa-solid fa-ruler",
+      initialW: 300,
+      initialH: 160,
+      render: (container) => {
+        mount(DistanceConfig, { target: container });
+      },
+    });
   }
 </script>
 
@@ -59,6 +81,35 @@
           on:click={handleFadeToggle}
           aria-pressed={fadeActive}
           aria-label={"activate fading"}
+        >
+          <span class="sc-toggle-thumb"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      class="sc-action-row sc-action-row--clickable"
+      on:click={openDistanceConfig}
+      role="button"
+      tabindex="0"
+      on:keydown={(e) => e.key === "Enter" && openDistanceConfig()}
+    >
+      <div class="sc-action-left">
+        <i class="fa-solid fa-ruler"></i>
+        <span class="sc-action-label"
+          >{game.i18n.localize("SC.Settings.DistanceMeasurer.Name")}</span
+        >
+      </div>
+      <div class="sc-action-right">
+        <button
+          type="button"
+          class="sc-toggle"
+          class:is-active={distanceActive}
+          on:click|stopPropagation={handleDistanceToggle}
+          aria-pressed={distanceActive}
+          aria-label={game.i18n.localize("SC.Settings.DistanceMeasurer.Name")}
         >
           <span class="sc-toggle-thumb"></span>
         </button>
@@ -110,7 +161,7 @@
   .sc-tools-section {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
   }
 
   .sc-tools-modules {
@@ -127,6 +178,7 @@
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 52px;
     gap: 10px;
   }
 
@@ -212,5 +264,14 @@
   .sc-toggle.is-active .sc-toggle-thumb {
     transform: translateX(12px);
     background: #fff;
+  }
+
+  .sc-action-row--clickable {
+    cursor: pointer;
+  }
+
+  .sc-action-row--clickable:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
   }
 </style>

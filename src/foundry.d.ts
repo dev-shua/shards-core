@@ -65,6 +65,22 @@ declare global {
   };
 }
 
+declare const canvas: {
+  tokens?: {
+    controlled: any[];
+  };
+  grid: any;
+  scene: any;
+  stage: {
+    scale: { x: number; y: number };
+    x: number;
+    y: number;
+  };
+  controls?: {
+    addChild(child: any): void;
+  };
+};
+
 declare const _maxZ: number;
 declare const ui: {
   activeWindow: { bringToTop: () => void } | null;

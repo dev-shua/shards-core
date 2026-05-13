@@ -27,5 +27,20 @@
   "SC.DiceRequest.Done": "Lancé",
   "SC.DiceRequest.Send": "Envoyer",
   "SC.Form.Cancel": "Annuler",
-  "SC.DiceRequest.Expired": "Demande expirée"
+  "SC.DiceRequest.Expired": "Demande expirée",
+  "SC.Notification.GMAdded": "reçoit",
+  "SC.Notification.GMRemoved": "perd",
+  "SC.Notification.PlayerAdded": "ajouté à l'inventaire",
+  "SC.Notification.PlayerRemoved": "retiré de l'inventaire",
+  "SC.Settings.DistanceMeasurer.Name": "Mesure de distance",
+  "SC.Settings.DistanceMeasurer.Hint": "Active la mesure de distance entre tokens pour tous les joueurs.",
+  "SC.Settings.DistanceMeasurerUnit.Name": "Unité de distance",
+  "SC.Settings.DistanceMeasurerUnit.Hint": "Affiche la distance en unités de map ou en cases.",
+  "SC.Settings.DistanceMeasurerClient.Name": "Mesure de distance (personnel)",
+  "SC.Settings.DistanceMeasurerClient.Hint": "Active ou désactive la mesure de distance pour vous uniquement.",
+  "SC.Settings.DistanceMeasurerLine.Name": "Afficher la ligne",
+  "SC.Settings.DistanceMeasurerLine.Hint": "Trace une ligne entre votre token et le token survolé.",
+  "SC.DistanceMeasurer.Title": "Paramètres de mesure de distance",
+  "SC.DistanceMeasurer.Unit.Units": "Unités de map",
+  "SC.DistanceMeasurer.Unit.Cells": "Cases"
 }

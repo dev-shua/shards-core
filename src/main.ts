@@ -20,6 +20,7 @@ import {
   registerDiceRequestSocket,
   requestRoll,
 } from "@features/diceRequest";
+import { registerDistanceMeasurer } from "@features/distanceMeasurer";
 
 export type { WindowConfig } from "@core/windows/WindowManager";
 export { registerTool, ToolButton };
@@ -57,6 +58,7 @@ Hooks.once("ready", async () => {
   initDiceRequestChatListener();
   applyFade(isFadeActive());
   registerLootNotifications();
+  registerDistanceMeasurer();
   if (!game.user?.isGM) return;
 
   registerTool({

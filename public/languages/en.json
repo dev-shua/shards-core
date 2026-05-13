@@ -27,5 +27,20 @@
   "SC.DiceRequest.Done": "Done",
   "SC.DiceRequest.Send": "Send request",
   "SC.Form.Cancel": "Cancel",
-  "SC.DiceRequest.Expired": "Request expired"
+  "SC.DiceRequest.Expired": "Request expired",
+  "SC.Notification.GMAdded": "receives",
+  "SC.Notification.GMRemoved": "loses",
+  "SC.Notification.PlayerAdded": "added to inventory",
+  "SC.Notification.PlayerRemoved": "removed from inventory",
+  "SC.Settings.DistanceMeasurer.Name": "Distance measurer",
+  "SC.Settings.DistanceMeasurer.Hint": "Enable distance measurement between tokens for all players.",
+  "SC.Settings.DistanceMeasurerUnit.Name": "Distance unit",
+  "SC.Settings.DistanceMeasurerUnit.Hint": "Display distance in map units or grid cells.",
+  "SC.Settings.DistanceMeasurerClient.Name": "Distance measurer (personal)",
+  "SC.Settings.DistanceMeasurerClient.Hint": "Enable or disable distance measurement for yourself only.",
+  "SC.Settings.DistanceMeasurerLine.Name": "Show distance line",
+  "SC.Settings.DistanceMeasurerLine.Hint": "Draw a line between your token and the hovered token.",
+  "SC.DistanceMeasurer.Title": "Distance measurer settings",
+  "SC.DistanceMeasurer.Unit.Units": "Map units",
+  "SC.DistanceMeasurer.Unit.Cells": "Grid cells"
 }

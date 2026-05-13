@@ -53,7 +53,8 @@
 }
 
 #shards-core-rail .dock-tool.is-active {
-  outline: 2px solid rgba(120, 150, 255, 0.8);
+  /* outline: 2px solid rgba(120, 150, 255, 0.8);*/
+  background: rgba(80, 80, 80, 0.95);
 }
 
 /* Panel */
