@@ -2,24 +2,18 @@
 
 ## [1.1.0] - 2026-05-15
 
-### ✨ Distance Measurer
+### New feature
 
-- Measure distance between tokens on hover
-- ALT key for per-cell precision on large tokens
-- Dashed line between tokens (toggleable)
-- Config window for unit (map units / cells)
-- Individual opt-out in Foundry settings
+- Distance Measurer: measure distance between tokens on hover
 
-### 🔔 Loot Notifications
+### Update
 
-- Notifications on item add / remove / quantity change
-- GM sees actor name + item
-- Color-coded quantity (red = loss)
+- The project is now updated for v14
 
-### 🛠 Fixes
+### Fixes
 
-- v14 compatibility
-- Removed blue outline on dock button
+- Loot Notifications: the notification now appear normally
+- UI: removed blue outline on dock button
 
 ## [1.0.0] - 2026-05-04
 
